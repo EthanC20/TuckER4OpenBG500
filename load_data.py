@@ -5,7 +5,7 @@ class Data:
 
     def __init__(self, data_dir="data/OpenBG500/", reverse=False):
         self.train_data = self.load_data(data_dir, "train", reverse=reverse)
-        self.valid_data = self.load_data(data_dir, "valid", reverse=reverse)
+        self.valid_data = self.load_data(data_dir, "dev", reverse=reverse)
         self.test_data = self.load_data(data_dir, "test", reverse=reverse)
         self.data = self.train_data + self.valid_data
         self.entities = self.get_entities(self.data)
@@ -17,8 +17,7 @@ class Data:
                                                                                       if i not in self.train_relations]
         # 创建一个包含训练、验证和测试数据集中所有关系的列表，并确保每个关系只出现一次
 
-
-    def load_data(data_dir, data_type="train", reverse=False):
+    def load_data(self, data_dir, data_type="train", reverse=False):
         file_path = f"{data_dir}/{data_type}.tsv"
         data = []
 

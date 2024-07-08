@@ -169,7 +169,7 @@ if __name__ == '__main__':
                         help="Which dataset to use: OpenBG500.")
     parser.add_argument("--num_iterations", type=int, default=500, nargs="?",
                         help="Number of iterations.")
-    parser.add_argument("--batch_size", type=int, default=128, nargs="?",
+    parser.add_argument("--batch_size", type=int, default=200, nargs="?",
                         help="Batch size.")
     parser.add_argument("--lr", type=float, default=0.0005, nargs="?",
                         help="Learning rate.")
