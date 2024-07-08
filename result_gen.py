@@ -2,12 +2,12 @@ import os, re
 
 data_path = "data\OpenBG500"
 
-with open(os.path.join(data_path, 'entity2id.txt'), 'r') as fp:
+with open(os.path.join(data_path, 'entity2id.tsv'), 'r') as fp:
     entity2id = fp.readlines()[1:]
     entity2id = [re.findall(r'(.+?)\t(.+?)\n',i)[0] for i in entity2id]
     ent2id = {a[1]:a[0] for a in entity2id}
 
-with open(os.path.join(data_path, 'relation2id.txt'), 'r') as fp:
+with open(os.path.join(data_path, 'relation2id.tsv'), 'r') as fp:
     relation2id = fp.readlines()[1:]
     relation2id = [re.findall(r'(.+?)\t(.+?)\n',i)[0] for i in relation2id]
     rel2id = {a[1]:a[0] for a in relation2id}

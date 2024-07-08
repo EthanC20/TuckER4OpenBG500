@@ -167,7 +167,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=str, default="OpenBG500", nargs="?",
                         help="Which dataset to use: OpenBG500.")
-    parser.add_argument("--num_iterations", type=int, default=500, nargs="?",
+    parser.add_argument("--num_iterations", type=int, default=150, nargs="?",
                         help="Number of iterations.")
     parser.add_argument("--batch_size", type=int, default=200, nargs="?",
                         help="Batch size.")
