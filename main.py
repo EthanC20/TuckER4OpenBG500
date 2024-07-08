@@ -60,7 +60,7 @@ class Experiment:
             hits.append([])
 
         test_data_idxs = self.get_data_idxs(data)
-        er_vocab = self.get_er_vocab(self.get_data_idxs(d.data))
+        er_vocab = self.get_er_vocab(self.get_data_idxs(self.data))
 
         print("Number of data points: %d" % len(test_data_idxs))
 
@@ -88,7 +88,10 @@ class Experiment:
 
                 if mode == 'test':
                     with open(f'./results/{RES}', 'a+') as fp:
-                        fp.write(f"{e1_idx[j].item()} {r_idx[j].item()} {' '.join(map(str, sort_idxs[j][:10]))}\n")
+                        head_name = d.idx_to_entity[e1_idx[j].item()]
+                        relation_name = d.idx_to_relation[r_idx[j].item()]
+                        top_tail_names = [d.idx_to_entity[idx] for idx in sort_idxs[j][:10]]
+                        fp.write(f"{head_name} {relation_name} {' '.join(top_tail_names)}\n")
 
                 rank = np.where(sort_idxs[j] == e2_idx[j].item())[0][0]
                 ranks.append(rank + 1)
