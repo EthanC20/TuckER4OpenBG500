@@ -1,1 +1,1 @@
-TuckER for OpenBG500
+TuckER methed on Alibaba OpenBG500 dataset
